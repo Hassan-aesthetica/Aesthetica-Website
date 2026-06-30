@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alessandro Corona – Persönliche Beratung zu Internet, TV & Mobilfunk</title>
+<meta name="description" content="Persönliche, unabhängige Beratung rund um Internet, TV und Mobilfunk – direkt bei Ihnen zu Hause. Ehrlich, transparent und TÜV-geprüft." />
+<meta name="theme-color" content="#0F4C47" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:title" content="Alessandro Corona – Persönliche Beratung zu Hause" />
+<meta property="og:description" content="Ich unterstütze Sie bei Neuverträgen, Vertragsprüfungen und Problemen mit Anbietern – unabhängig, transparent und zuverlässig." />
+<meta property="og:url" content="https://alessandrocorona.de/" />
+<meta property="og:image" content="https://alessandrocorona.de/wp-content/uploads/2025/12/5be2e788-e834-40d9-9725-27706c261c5c.jpeg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #F4F6F5;
+    --surface: #FFFFFF;
+    --surface-soft: #EEF2F0;
+    --ink: #14201D;
+    --muted: #54635E;
+    --primary: #0F4C47;
+    --primary-deep: #0A3733;
+    --teal: #1C8077;
+    --amber: #E0A02C;
+    --amber-soft: #F7EBD2;
+    --line: #E1E7E4;
+    --shadow-sm: 0 2px 8px rgba(15, 76, 71, .06);
+    --shadow-md: 0 18px 40px -22px rgba(10, 55, 51, .35);
+    --shadow-lg: 0 30px 70px -30px rgba(10, 55, 51, .45);
+    --radius: 18px;
+    --radius-sm: 12px;
+    --maxw: 1140px;
+    --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, sans-serif;
+    --ease: cubic-bezier(.22, 1, .36, 1);
+    --ease-soft: cubic-bezier(.4, 0, .2, 1);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; font-family: var(--font-body); color: var(--ink); background: var(--bg);
+    line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.08; letter-spacing: -.02em; }
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body);
+    font-size: .82rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--teal);
+  }
+  .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--amber); border-radius: 2px; }
+
+  /* ---------- Scroll progress ---------- */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 100%;
+    transform: scaleX(0); transform-origin: 0 50%; z-index: 100;
+    background: linear-gradient(90deg, var(--teal), var(--amber));
+    will-change: transform;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    font-family: var(--font-body); font-weight: 600; font-size: 1rem;
+    padding: 14px 26px; border-radius: 999px; border: 1.5px solid transparent; cursor: pointer;
+    transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .25s var(--ease-soft), color .25s var(--ease-soft);
+    text-align: center; will-change: transform;
+  }
+  .btn-primary { background: var(--primary); color: #fff; box-shadow: var(--shadow-md); }
+  .btn-primary:hover { background: var(--primary-deep); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .btn-primary:active { transform: translateY(-1px) scale(.99); }
+  .btn-ghost { background: transparent; color: var(--primary); border-color: rgba(15,76,71,.25); }
+  .btn-ghost:hover { background: var(--surface); border-color: var(--primary); transform: translateY(-3px); }
+  .btn svg { width: 18px; height: 18px; }
+
+  /* ---------- Header ---------- */
+  header.site {
+    position: sticky; top: 0; z-index: 60; background: rgba(244,246,245,.82);
+    backdrop-filter: saturate(140%) blur(12px); border-bottom: 1px solid var(--line);
+    transition: box-shadow .3s var(--ease-soft), background .3s var(--ease-soft);
+  }
+  header.site.scrolled { box-shadow: 0 10px 30px -20px rgba(10,55,51,.4); background: rgba(244,246,245,.92); }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; box-shadow: var(--shadow-sm); transition: transform .4s var(--ease); }
+  .brand:hover img { transform: rotate(-4deg) scale(1.05); }
+  .brand .name { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: -.01em; line-height: 1.1; }
+  .brand .role { font-size: .74rem; color: var(--muted); letter-spacing: .02em; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a { font-size: .96rem; font-weight: 500; color: var(--ink); position: relative; padding: 4px 0; }
+  .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -2px; height: 2px; width: 0; background: var(--amber); transition: width .28s var(--ease); }
+  .nav-links a:hover::after, .nav-links a:focus-visible::after { width: 100%; }
+  .nav-cta { display: flex; align-items: center; gap: 14px; }
+  .nav-cta .btn { padding: 10px 20px; font-size: .92rem; }
+  .menu-toggle { display: none; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; width: 44px; height: 44px; cursor: pointer; align-items: center; justify-content: center; color: var(--ink); }
+  .menu-toggle svg { width: 22px; height: 22px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: clamp(48px, 7vw, 96px) 0 clamp(40px, 5vw, 72px); position: relative; overflow: hidden; }
+  .hero-blob { position: absolute; inset: 0; z-index: 0; pointer-events: none; will-change: transform; }
+  .hero-blob::before, .hero-blob::after {
+    content: ""; position: absolute; border-radius: 50%; filter: blur(8px);
+  }
+  .hero-blob::before { width: 620px; height: 460px; right: -6%; top: -14%; background: radial-gradient(closest-side, rgba(28,128,119,.18), transparent 72%); }
+  .hero-blob::after { width: 520px; height: 380px; left: -10%; top: 8%; background: radial-gradient(closest-side, rgba(224,160,44,.14), transparent 72%); }
+  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+  .hero h1 { font-size: clamp(2.3rem, 5.2vw, 4rem); font-weight: 700; margin: 18px 0 0; }
+  .hero h1 .hl { color: var(--primary); position: relative; white-space: nowrap; }
+  .hero h1 .hl::after { content: ""; position: absolute; left: 0; right: 0; bottom: .06em; height: .28em; background: var(--amber-soft); z-index: -1; border-radius: 4px; transform: scaleX(0); transform-origin: 0 50%; transition: transform .7s .5s var(--ease); }
+  .reveal.in .hl::after, .hero-copy.in .hl::after { transform: scaleX(1); }
+  .hero .lead-strong { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--teal); margin: 20px 0 0; letter-spacing: -.01em; }
+  .hero p.lead { font-size: 1.08rem; color: var(--muted); margin: 14px 0 0; max-width: 30em; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+  .trust-row { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 30px; }
+  .trust-chip { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; font-weight: 500; color: var(--ink); }
+  .trust-chip svg { width: 18px; height: 18px; color: var(--teal); flex: none; }
+
+  /* Hero credential card */
+  .cred-card { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 30px; box-shadow: var(--shadow-lg); position: relative; will-change: transform; }
+  .cred-top { display: flex; align-items: center; gap: 16px; }
+  .monogram { width: 64px; height: 64px; flex: none; border-radius: 16px; background: linear-gradient(150deg, var(--primary), var(--teal)); color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; letter-spacing: -.02em; box-shadow: var(--shadow-md); }
+  .cred-top .who .nm { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; }
+  .cred-top .who .rl { font-size: .88rem; color: var(--muted); }
+  .signal { margin-left: auto; display: flex; align-items: flex-end; gap: 4px; height: 30px; }
+  .signal i { width: 5px; border-radius: 3px; background: var(--teal); opacity: .35; animation: bars 1.4s var(--ease-soft) infinite; }
+  .signal i:nth-child(1){ height: 38%; animation-delay: 0s; }
+  .signal i:nth-child(2){ height: 60%; animation-delay: .18s; }
+  .signal i:nth-child(3){ height: 82%; animation-delay: .36s; }
+  .signal i:nth-child(4){ height: 100%; animation-delay: .54s; }
+  @keyframes bars { 0%,100%{ opacity: .3; transform: scaleY(.65); } 50%{ opacity: 1; transform: scaleY(1); } }
+  .signal i { transform-origin: bottom; }
+  .cred-divider { height: 1px; background: var(--line); margin: 22px 0; }
+  .cred-list { display: flex; flex-direction: column; gap: 14px; }
+  .cred-item { display: flex; gap: 12px; align-items: flex-start; }
+  .cred-item .dot { width: 26px; height: 26px; flex: none; border-radius: 8px; background: var(--surface-soft); display: flex; align-items: center; justify-content: center; color: var(--teal); }
+  .cred-item .dot svg { width: 16px; height: 16px; }
+  .cred-item span { font-size: .95rem; font-weight: 500; }
+  .tuev-badge { margin-top: 22px; display: flex; align-items: center; gap: 12px; background: var(--amber-soft); border: 1px solid #EFD9A8; border-radius: 14px; padding: 12px 14px; }
+  .tuev-badge .seal { width: 40px; height: 40px; flex: none; border-radius: 50%; border: 2px solid var(--amber); color: #9A6B12; background: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: .62rem; line-height: 1; text-align: center; }
+  .tuev-badge .tx { font-size: .86rem; }
+  .tuev-badge .tx b { display: block; font-family: var(--font-display); }
+  .tuev-badge a { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+  /* ---------- Sections ---------- */
+  section { padding: clamp(56px, 7vw, 96px) 0; }
+  .section-head { max-width: 40rem; margin-bottom: 44px; }
+  .section-head h2 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); font-weight: 700; margin-top: 14px; }
+  .section-head p { color: var(--muted); font-size: 1.06rem; margin: 14px 0 0; }
+
+  /* Leistungen */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .service { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow-sm); transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .3s var(--ease-soft); position: relative; will-change: transform; }
+  .service:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: #CBD8D3; }
+  .service .ic { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: linear-gradient(150deg, rgba(15,76,71,.10), rgba(28,128,119,.16)); color: var(--primary); margin-bottom: 18px; transition: transform .4s var(--ease); }
+  .service:hover .ic { transform: scale(1.08) rotate(-3deg); }
+  .service .ic svg { width: 25px; height: 25px; }
+  .service h3 { font-size: 1.22rem; font-weight: 600; }
+  .service .tag { display: inline-block; margin-top: 8px; font-size: .74rem; font-weight: 600; letter-spacing: .04em; color: var(--primary); background: var(--surface-soft); padding: 4px 10px; border-radius: 999px; }
+  .service p { color: var(--muted); margin: 12px 0 0; font-size: .98rem; }
+  .services-note { margin-top: 32px; text-align: center; font-size: 1.05rem; color: var(--ink); }
+  .services-note b { color: var(--primary); }
+
+  /* ---------- Ersparnis-Rechner (Gadget) ---------- */
+  .calc { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+  .calc-panel { background: linear-gradient(160deg, var(--primary), var(--primary-deep)); color: #EAF2F0; border-radius: 22px; padding: clamp(26px, 4vw, 40px); box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+  .calc-panel::after { content: ""; position: absolute; width: 320px; height: 320px; right: -80px; top: -80px; border-radius: 50%; background: radial-gradient(closest-side, rgba(224,160,44,.22), transparent 70%); pointer-events: none; }
+  .calc-panel .lbl { font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(234,242,240,.7); }
+  .calc-amount { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.6rem, 6vw, 3.6rem); line-height: 1; margin: 6px 0 2px; letter-spacing: -.02em; color: #fff; }
+  .calc-amount .cur { font-size: .55em; vertical-align: super; margin-right: 4px; color: var(--amber); }
+  .calc-sub { font-size: .95rem; color: rgba(234,242,240,.78); }
+  .calc-readout { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 26px; position: relative; z-index: 1; }
+  .calc-readout .box { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: 14px 16px; }
+  .calc-readout .box .k { font-size: .76rem; letter-spacing: .04em; text-transform: uppercase; color: rgba(234,242,240,.66); }
+  .calc-readout .box .v { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; color: #fff; margin-top: 4px; }
+  .calc-readout .box.save .v { color: var(--amber); }
+  .calc-controls h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: 700; margin-top: 14px; }
+  .calc-controls p { color: var(--muted); margin: 14px 0 0; font-size: 1.02rem; }
+  .slider-wrap { margin: 30px 0 10px; }
+  .slider-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+  .slider-top .sk { font-weight: 600; font-size: .95rem; }
+  .slider-top .sv { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--primary); }
+  input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 10px; border-radius: 999px; background: var(--surface-soft); outline: none; cursor: pointer; }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 28px; height: 28px; border-radius: 50%; background: var(--primary); border: 4px solid #fff; box-shadow: var(--shadow-md); transition: transform .2s var(--ease); }
+  input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.12); }
+  input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--primary); border: 4px solid #fff; box-shadow: var(--shadow-md); cursor: pointer; }
+  .calc-disclaimer { font-size: .82rem; color: var(--muted); margin-top: 18px; }
+  .calc-controls .btn { margin-top: 22px; }
+
+  /* Über mich */
+  .about { background: var(--bg); }
+  .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(30px, 5vw, 64px); align-items: center; }
+  .about-photo { position: relative; }
+  .about-photo img { width: 100%; border-radius: 22px; box-shadow: var(--shadow-lg); object-fit: cover; border: 1px solid var(--line); }
+  .about-photo .float { position: absolute; left: -14px; bottom: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 10px; will-change: transform; }
+  .about-photo .float svg { width: 22px; height: 22px; color: var(--teal); }
+  .about-photo .float .t { font-size: .82rem; line-height: 1.3; }
+  .about-photo .float .t b { font-family: var(--font-display); display: block; }
+  .about-body h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 700; margin-top: 14px; }
+  .about-body p { color: var(--muted); margin: 16px 0 0; font-size: 1.04rem; }
+  .about-body p strong { color: var(--ink); }
+  .about-cert { margin-top: 26px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px 20px; }
+  .about-cert .seal { width: 52px; height: 52px; flex: none; border-radius: 50%; border: 2.5px solid var(--amber); color: #9A6B12; background: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: .66rem; text-align: center; line-height: 1; }
+  .about-cert .ct { flex: 1 1 200px; }
+  .about-cert .ct b { font-family: var(--font-display); }
+  .about-cert .ct p { margin: 2px 0 0; font-size: .9rem; color: var(--muted); }
+
+  /* Warum mit mir */
+  .reasons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .reason { display: flex; gap: 14px; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 22px 24px; box-shadow: var(--shadow-sm); transition: transform .35s var(--ease), box-shadow .35s var(--ease); will-change: transform; }
+  .reason:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .reason .check { width: 30px; height: 30px; flex: none; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; transition: transform .35s var(--ease); }
+  .reason:hover .check { transform: scale(1.12) rotate(8deg); }
+  .reason .check svg { width: 17px; height: 17px; }
+  .reason span { font-weight: 500; font-size: 1.02rem; }
+
+  /* Kontakt */
+  .contact { background: var(--primary-deep); color: #EAF2F0; }
+  .contact .section-head h2 { color: #fff; }
+  .contact .eyebrow { color: #8FD3C9; }
+  .contact .eyebrow::before { background: var(--amber); }
+  .contact .section-head p { color: rgba(234,242,240,.78); }
+  .contact-grid { display: grid; grid-template-columns: 1fr .9fr; gap: clamp(30px, 5vw, 56px); align-items: start; }
+  .form-card { background: var(--surface); color: var(--ink); border-radius: 22px; padding: clamp(26px, 4vw, 40px); box-shadow: var(--shadow-lg); }
+  .field { margin-bottom: 18px; }
+  .field.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 0; }
+  .field.row > div { margin-bottom: 18px; }
+  label { display: block; font-size: .88rem; font-weight: 600; margin-bottom: 7px; }
+  label .opt { color: var(--muted); font-weight: 400; }
+  input, textarea { width: 100%; font-family: var(--font-body); font-size: 1rem; color: var(--ink); padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; transition: border-color .2s var(--ease-soft), box-shadow .2s var(--ease-soft); }
+  input:focus, textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 4px rgba(28,128,119,.14); }
+  textarea { resize: vertical; min-height: 110px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .consent { display: flex; gap: 11px; align-items: flex-start; margin: 4px 0 22px; }
+  .consent input { width: 20px; height: 20px; flex: none; margin-top: 2px; accent-color: var(--primary); }
+  .consent label { font-size: .86rem; font-weight: 400; color: var(--muted); margin: 0; }
+  .form-card .btn-primary { width: 100%; }
+  .form-note { margin: 14px 0 0; font-size: .82rem; color: var(--muted); text-align: center; }
+  .contact-info { display: flex; flex-direction: column; gap: 14px; }
+  .info-card { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-sm); padding: 18px 20px; transition: background .25s var(--ease-soft), transform .35s var(--ease); will-change: transform; }
+  a.info-card:hover { background: rgba(255,255,255,.12); transform: translateY(-3px); }
+  .info-card .ic { width: 44px; height: 44px; flex: none; border-radius: 12px; background: rgba(143,211,201,.16); color: #8FD3C9; display: flex; align-items: center; justify-content: center; }
+  .info-card .ic svg { width: 22px; height: 22px; }
+  .info-card .lbl { font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; color: rgba(234,242,240,.66); }
+  .info-card .val { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: #fff; }
+  .social-row { display: flex; gap: 12px; margin-top: 6px; }
+  .social-row a { width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; color: #EAF2F0; transition: background .25s var(--ease-soft), transform .35s var(--ease); will-change: transform; }
+  .social-row a:hover { background: var(--amber); color: var(--primary-deep); transform: translateY(-3px); }
+  .social-row svg { width: 20px; height: 20px; }
+
+  /* ---------- Footer ---------- */
+  footer.site { background: var(--ink); color: rgba(255,255,255,.78); padding: 56px 0 30px; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; }
+  .foot-brand .name { font-family: var(--font-display); font-weight: 700; color: #fff; font-size: 1.25rem; }
+  .foot-brand p { margin: 12px 0 0; font-size: .95rem; max-width: 30ch; color: rgba(255,255,255,.62); }
+  .foot-col h4 { font-family: var(--font-display); font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.5); margin: 0 0 16px; font-weight: 600; }
+  .foot-col a { display: block; padding: 6px 0; font-size: .96rem; color: rgba(255,255,255,.78); transition: color .2s var(--ease-soft), transform .2s var(--ease); }
+  .foot-col a:hover { color: var(--amber); transform: translateX(4px); }
+  .foot-bottom { margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.12); display: flex; flex-wrap: wrap; gap: 12px 22px; align-items: center; justify-content: space-between; font-size: .86rem; color: rgba(255,255,255,.55); }
+  .foot-bottom a { color: rgba(255,255,255,.7); text-decoration: underline; text-underline-offset: 2px; }
+  .foot-bottom .legal { display: flex; gap: 18px; flex-wrap: wrap; }
+
+  /* ---------- Back to top ---------- */
+  .to-top { position: fixed; right: 22px; bottom: 22px; z-index: 80; width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-lg); opacity: 0; transform: translateY(16px) scale(.9); pointer-events: none; transition: opacity .35s var(--ease), transform .35s var(--ease), background .25s var(--ease-soft); }
+  .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+  .to-top:hover { background: var(--primary-deep); transform: translateY(-3px); }
+  .to-top svg { width: 22px; height: 22px; }
+
+  /* ---------- Reveal animation ---------- */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: var(--d, 0s); will-change: opacity, transform; }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.in { will-change: auto; }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 920px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .cred-card { max-width: 460px; }
+    .calc-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-photo { max-width: 420px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .services { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 760px) {
+    .nav-links, .nav-cta .btn-ghost { display: none; }
+    .menu-toggle { display: flex; }
+    .nav-links.open { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; position: absolute; top: 72px; left: 16px; right: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px; box-shadow: var(--shadow-lg); }
+    .nav-links.open a { width: 100%; padding: 12px 8px; border-bottom: 1px solid var(--line); }
+    .nav-links.open a:last-child { border-bottom: none; }
+    .services { grid-template-columns: 1fr; }
+    .reasons { grid-template-columns: 1fr; }
+    .calc-readout { grid-template-columns: 1fr; }
+    .field.row { grid-template-columns: 1fr; gap: 0; }
+    .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+    .reveal { opacity: 1; transform: none; }
+    .hero-blob { display: none; }
+  }
+
+  :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="progress" aria-hidden="true"></div>
+
+<!-- ===== Header ===== -->
+<header class="site" id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Alessandro Corona – Startseite">
+      <img src="https://alessandrocorona.de/wp-content/uploads/2025/12/5be2e788-e834-40d9-9725-27706c261c5c.jpeg" alt="Logo Alessandro Corona" />
+      <span>
+        <span class="name">Alessandro Corona</span><br />
+        <span class="role">Beratung · Internet · TV · Mobilfunk</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#rechner">Ersparnis-Rechner</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="https://alessandrocorona.de/erfolge/">Erfolge</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="tel:+4915120105783">Anrufen</a>
+      <a class="btn btn-primary" href="#kontakt">Beratung anfragen</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero-blob" id="heroBlob"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Persönliche Beratung zu Hause</span>
+        <h1>Klarheit bei <span class="hl">Internet, TV &amp; Mobilfunk</span> – direkt bei Ihnen zu&nbsp;Hause.</h1>
+        <p class="lead-strong">Ehrlich. Transparent. Lösungsorientiert.</p>
+        <p class="lead">Ich unterstütze Sie bei Neuverträgen, Vertragsprüfungen und Problemen mit Anbietern – unabhängig, verständlich und zuverlässig.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#kontakt">
+            Kostenlose Beratung anfragen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="tel:+4915120105783">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Rückruf vereinbaren
+          </a>
+        </div>
+        <div class="trust-row">
+          <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> TÜV-geprüfte Beratung</span>
+          <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> In Zusammenarbeit mit Vodafone</span>
+          <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Ohne Verkaufsdruck</span>
+        </div>
+      </div>
+
+      <aside class="cred-card reveal" aria-label="Kurzprofil" style="--d:.12s">
+        <div class="cred-top">
+          <div class="monogram" aria-hidden="true">AC</div>
+          <div class="who">
+            <div class="nm">Alessandro Corona</div>
+            <div class="rl">Teamleiter · Direktvertrieb</div>
+          </div>
+          <div class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="cred-divider"></div>
+        <div class="cred-list">
+          <div class="cred-item"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persönliche 1-zu-1-Beratung bei Ihnen zu Hause</span></div>
+          <div class="cred-item"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Verständlich erklärt – kein Fachchinesisch</span></div>
+          <div class="cred-item"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Begleitung über den Vertragsabschluss hinaus</span></div>
+        </div>
+        <div class="tuev-badge">
+          <div class="seal" aria-hidden="true">TÜV</div>
+          <div class="tx">
+            <b>Geprüft &amp; zertifiziert</b>
+            <a href="https://www.certipedia.com/quality_marks/0217464872?locale=de" target="_blank" rel="noopener">Zertifikat ansehen →</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== Leistungen ===== -->
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Leistungen</span>
+        <h2>Was ich für Sie tun kann</h2>
+        <p>Ich berate verständlich, ehrlich und individuell – abgestimmt auf Ihre tatsächlichen Bedürfnisse.</p>
+      </div>
+      <div class="services">
+        <article class="service reveal" style="--d:.05s">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Tarif- &amp; Vertragsberatung</h3>
+          <span class="tag">Im Auftrag für Vodafone</span>
+          <p>Ich finde den passenden Internet-, TV- oder Mobilfunktarif für Ihre Situation – klar erklärt und ohne versteckte Kosten.</p>
+        </article>
+        <article class="service reveal" style="--d:.13s">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <h3>Kostenlose Vertragsprüfung</h3>
+          <span class="tag">Unverbindlich</span>
+          <p>Ich prüfe Ihre bestehenden Verträge und zeige Ihnen, ob Sie sparen oder bessere Konditionen erhalten können.</p>
+        </article>
+        <article class="service reveal" style="--d:.21s">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+          <h3>Hilfe bei Problemen &amp; Beschwerden</h3>
+          <span class="tag">Vodafone · Telekom · O2 · 1&amp;1</span>
+          <p>Falsche Beratung, Ärger mit Anbietern oder unklare Verträge? Ich unterstütze Sie bei Widerruf, Klärung und Reklamation.</p>
+        </article>
+      </div>
+      <p class="services-note reveal">Verständlich, <b>ehrlich</b> und individuell – abgestimmt auf das, was Sie wirklich&nbsp;brauchen.</p>
+    </div>
+  </section>
+
+  <!-- ===== Ersparnis-Rechner ===== -->
+  <section id="rechner" class="calc">
+    <div class="wrap calc-grid">
+      <div class="calc-controls reveal">
+        <span class="eyebrow">Ersparnis-Rechner</span>
+        <h2>Was zahlen Sie aktuell?</h2>
+        <p>Stellen Sie Ihre monatlichen Kosten für Internet, TV &amp; Mobilfunk ein. Der Rechner zeigt Ihnen sofort, wo sich ein genauer Blick lohnen kann.</p>
+        <div class="slider-wrap">
+          <div class="slider-top">
+            <span class="sk">Monatliche Kosten</span>
+            <span class="sv" id="sliderVal">55 €</span>
+          </div>
+          <input type="range" id="costSlider" min="15" max="120" step="1" value="55" aria-label="Monatliche Kosten in Euro" />
+        </div>
+        <p class="calc-disclaimer">Unverbindliche Beispielrechnung. Ihr tatsächliches Einsparpotenzial ermittle ich kostenlos im persönlichen Vertrags-Check.</p>
+        <a class="btn btn-primary" href="#kontakt">Kostenlosen Check anfragen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="calc-panel reveal" style="--d:.1s">
+        <div class="lbl">Mögliche Ersparnis pro Jahr</div>
+        <div class="calc-amount"><span class="cur">bis zu</span><span id="saveYear">0</span> €</div>
+        <div class="calc-sub">basierend auf einer beispielhaften Optimierung Ihrer Tarife</div>
+        <div class="calc-readout">
+          <div class="box">
+            <div class="k">Aktuell / Jahr</div>
+            <div class="v" id="costYear">0 €</div>
+          </div>
+          <div class="box save">
+            <div class="k">Ersparnis / Monat</div>
+            <div class="v" id="saveMonth">0 €</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Über mich ===== -->
+  <section id="ueber-mich" class="about">
+    <div class="wrap about-grid">
+      <div class="about-photo reveal">
+        <img src="https://alessandrocorona.de/wp-content/uploads/2026/01/IMG_0120-scaled-e1767338910330-931x1024.jpeg" alt="Porträtfoto von Alessandro Corona" loading="lazy" />
+        <div class="float">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span class="t"><b>Seriös &amp; transparent</b>Beratung mit klarem Gewissen</span>
+        </div>
+      </div>
+      <div class="about-body reveal" style="--d:.1s">
+        <span class="eyebrow">Über mich</span>
+        <h2>Mein Name ist Alessandro Corona</h2>
+        <p>Ich bin Teamleiter im Bereich <strong>Internet, Kabel, TV und Mobilfunk</strong> und seit vielen Jahren im Direktvertrieb tätig. Bei Internet, Kabel, Mobilfunk und Tarifwechsel arbeite ich <strong>in Zusammenarbeit mit Vodafone</strong>.</p>
+        <p>Mir ist eines besonders wichtig: <strong>ehrliche Beratung ohne Verkaufsdruck</strong>. Ich erkläre verständlich, welche Lösungen wirklich sinnvoll sind – und begleite meine Kundinnen und Kunden auch über den Vertragsabschluss hinaus.</p>
+        <div class="about-cert">
+          <div class="seal" aria-hidden="true">TÜV</div>
+          <div class="ct">
+            <b>TÜV-geprüfte Qualität</b>
+            <p>Persönlich vom TÜV geprüft und zertifiziert. Transparenz und Neutralität stehen bei mir an erster Stelle.</p>
+          </div>
+          <a class="btn btn-ghost" href="https://www.certipedia.com/quality_marks/0217464872?locale=de" target="_blank" rel="noopener">Zertifikat ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Warum mit mir ===== -->
+  <section id="warum">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Warum mit mir?</span>
+        <h2>Beratung, auf die Sie sich verlassen können</h2>
+      </div>
+      <div class="reasons">
+        <div class="reason reveal" style="--d:.04s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Persönliche 1-zu-1-Beratung</span></div>
+        <div class="reason reveal" style="--d:.08s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Verständliche Erklärungen – kein Fachchinesisch</span></div>
+        <div class="reason reveal" style="--d:.12s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Unterstützung auch bei Problemen und Beschwerden</span></div>
+        <div class="reason reveal" style="--d:.16s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Seriöse &amp; transparente Abwicklung</span></div>
+        <div class="reason reveal" style="--d:.20s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>TÜV-geprüfte Beratung</span></div>
+        <div class="reason reveal" style="--d:.24s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Begleitung über den Abschluss hinaus</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Kontakt ===== -->
+  <section id="kontakt" class="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Kontakt &amp; Beratung</span>
+        <h2>Lassen Sie uns sprechen</h2>
+        <p>Nutzen Sie das Formular oder vereinbaren Sie direkt einen Rückruf. Ich melde mich zeitnah persönlich bei Ihnen.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="form-card reveal">
+          <form id="contactForm" novalidate>
+            <div class="hp" aria-hidden="true">
+              <label for="website">Lass dieses Feld leer</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="field row">
+              <div><label for="vorname">Vorname</label><input type="text" id="vorname" name="vorname" required /></div>
+              <div><label for="nachname">Nachname</label><input type="text" id="nachname" name="nachname" required /></div>
+            </div>
+            <div class="field"><label for="email">E-Mail-Adresse <span class="opt">(optional)</span></label><input type="email" id="email" name="email" /></div>
+            <div class="field"><label for="telefon">Rufnummer <span class="opt">(optional)</span></label><input type="tel" id="telefon" name="telefon" /></div>
+            <div class="field"><label for="anliegen">Worum geht es? <span class="opt">(optional)</span></label><textarea id="anliegen" name="anliegen" placeholder="Beschreiben Sie kurz Ihr Anliegen …"></textarea></div>
+            <div class="consent">
+              <input type="checkbox" id="consent" name="consent" required />
+              <label for="consent">Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden.</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Anfrage senden
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>
+            </button>
+            <p class="form-note">Beim Absenden öffnet sich Ihr E-Mail-Programm mit der fertigen Nachricht an info@alessandrocorona.de.</p>
+          </form>
+        </div>
+        <div class="contact-info reveal" style="--d:.1s">
+          <a class="info-card" href="tel:+4915120105783">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span><span class="lbl">Telefon</span><span class="val">+49 151 201 057 83</span></span>
+          </a>
+          <a class="info-card" href="mailto:info@alessandrocorona.de">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span>
+            <span><span class="lbl">E-Mail</span><span class="val">info@alessandrocorona.de</span></span>
+          </a>
+          <div class="social-row">
+            <a href="https://www.tiktok.com/@alessandrocorona5" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.05-2.82h-3.2v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12V9.66a5.79 5.79 0 0 0-.78-.05A5.81 5.81 0 1 0 15.4 15.4V9.01a7.45 7.45 0 0 0 4.35 1.39V7.2a4.28 4.28 0 0 1-3.15-1.38z"/></svg></a>
+            <a href="https://www.instagram.com/alessandro.corona.90" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+            <a href="https://youtube.com/@coronamelle" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.4-.4-5a2.6 2.6 0 0 0-1.8-1.8C19 4.8 12 4.8 12 4.8s-7 0-8.8.4A2.6 2.6 0 0 0 1.4 7C1 8.6 1 12 1 12s0 3.4.4 5a2.6 2.6 0 0 0 1.8 1.8c1.8.4 8.8.4 8.8.4s7 0 8.8-.4A2.6 2.6 0 0 0 22.6 17c.4-1.6.4-5 .4-5zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+            <a href="https://de.linkedin.com/in/alessandro-corona-29b828227" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.34 17.34V10.4H6.06v6.94zM7.2 9.4a1.32 1.32 0 1 0 0-2.64 1.32 1.32 0 0 0 0 2.64zm10.14 7.94v-3.8c0-2.03-1.08-2.98-2.53-2.98a2.18 2.18 0 0 0-1.98 1.09v-.94h-2.28v6.63h2.28v-3.5c0-.93.18-1.83 1.33-1.83 1.14 0 1.15 1.06 1.15 1.89v3.44z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">Alessandro Corona</div>
+        <p>Persönliche, unabhängige Beratung rund um Internet, TV und Mobilfunk – direkt bei Ihnen zu Hause.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <a href="#top">Startseite</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#rechner">Ersparnis-Rechner</a>
+        <a href="https://alessandrocorona.de/karriere/">Karriere</a>
+        <a href="https://alessandrocorona.de/erfolge/">Erfolge</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <a href="tel:+4915120105783">+49 151 201 057 83</a>
+        <a href="mailto:info@alessandrocorona.de">info@alessandrocorona.de</a>
+        <a href="https://www.instagram.com/alessandro.corona.90" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@alessandrocorona5" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Alessandro Corona · Alle Rechte vorbehalten</span>
+      <span class="legal">
+        <a href="https://alessandrocorona.de/impressum/">Impressum</a>
+        <a href="https://alessandrocorona.de/datenschutz/">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Nach oben scrollen">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Reveal on scroll
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  // --- Single rAF loop: scroll progress, header shadow, parallax, back-to-top ---
+  var progress = document.getElementById('progress');
+  var header = document.getElementById('header');
+  var toTop = document.getElementById('toTop');
+  var blob = document.getElementById('heroBlob');
+  var allowParallax = !reduce && window.matchMedia('(pointer:fine)').matches && window.innerWidth > 920;
+  var ticking = false;
+
+  function onFrame() {
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var p = h > 0 ? y / h : 0;
+    progress.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+    if (y > 8) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+    if (y > 600) toTop.classList.add('show'); else toTop.classList.remove('show');
+    if (allowParallax && blob && y < window.innerHeight * 1.4) {
+      blob.style.transform = 'translate3d(0,' + (y * 0.18).toFixed(1) + 'px,0)';
+    }
+    ticking = false;
+  }
+  function requestFrame() { if (!ticking) { ticking = true; requestAnimationFrame(onFrame); } }
+  window.addEventListener('scroll', requestFrame, { passive: true });
+  window.addEventListener('resize', requestFrame, { passive: true });
+  onFrame();
+
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+
+  // --- Ersparnis-Rechner ---
+  var slider = document.getElementById('costSlider');
+  var sliderVal = document.getElementById('sliderVal');
+  var costYearEl = document.getElementById('costYear');
+  var saveYearEl = document.getElementById('saveYear');
+  var saveMonthEl = document.getElementById('saveMonth');
+  var SAVE_RATE = 0.18; // beispielhafte Optimierung (18 %)
+  var eur = function (n) { return Math.round(n).toLocaleString('de-DE'); };
+  var animRAF = null;
+
+  function targets() {
+    var m = parseInt(slider.value, 10);
+    return { monthly: m, costYear: m * 12, saveMonth: m * SAVE_RATE, saveYear: m * 12 * SAVE_RATE };
+  }
+  function render(t, instant) {
+    sliderVal.textContent = t.monthly + ' €';
+    var min = parseInt(slider.min, 10), max = parseInt(slider.max, 10);
+    var pct = ((t.monthly - min) / (max - min)) * 100;
+    slider.style.background = 'linear-gradient(90deg, var(--primary) 0%, var(--teal) ' + pct + '%, var(--surface-soft) ' + pct + '%)';
+    costYearEl.textContent = eur(t.costYear) + ' €';
+    saveMonthEl.textContent = eur(t.saveMonth) + ' €';
+    saveYearEl.textContent = eur(t.saveYear);
+  }
+  // Live update while dragging (cheap, no count-up to stay smooth)
+  slider.addEventListener('input', function () {
+    if (animRAF) { cancelAnimationFrame(animRAF); animRAF = null; }
+    render(targets());
+  });
+  // Count-up once when the panel first appears
+  var panel = document.querySelector('.calc-panel');
+  var counted = false;
+  var io2 = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && !counted) {
+        counted = true;
+        var t = targets();
+        if (reduce) { render(t); io2.disconnect(); return; }
+        var start = performance.now(), dur = 900;
+        (function step(now) {
+          var k = Math.min((now - start) / dur, 1);
+          var e2 = 1 - Math.pow(1 - k, 3); // easeOutCubic
+          render({ monthly: t.monthly, costYear: t.costYear * e2, saveMonth: t.saveMonth * e2, saveYear: t.saveYear * e2 });
+          if (k < 1) animRAF = requestAnimationFrame(step);
+        })(start);
+        io2.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  io2.observe(panel);
+  render(targets()); // initial fill
+
+  // --- Contact form -> mail client ---
+  var form = document.getElementById('contactForm');
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (form.website.value) return;
+    if (!form.vorname.value.trim() || !form.nachname.value.trim()) { alert('Bitte geben Sie Vor- und Nachnamen an.'); return; }
+    if (!form.consent.checked) { alert('Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.'); return; }
+    var name = form.vorname.value.trim() + ' ' + form.nachname.value.trim();
+    var lines = [
+      'Name: ' + name,
+      form.email.value.trim() ? 'E-Mail: ' + form.email.value.trim() : '',
+      form.telefon.value.trim() ? 'Rufnummer: ' + form.telefon.value.trim() : '',
+      '', 'Anliegen:', form.anliegen.value.trim() || '(keine Angabe)'
+    ].filter(Boolean);
+    window.location.href = 'mailto:info@alessandrocorona.de?subject=' +
+      encodeURIComponent('Beratungsanfrage von ' + name) + '&body=' + encodeURIComponent(lines.join('\n'));
+  });
+})();
+</script>
+</body>
+</html>
