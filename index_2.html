@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alessandro Corona – Beratung &amp; Karriere rund um Internet, TV &amp; Mobilfunk</title>
+<meta name="description" content="Persönliche, TÜV-geprüfte Beratung rund um Internet, TV und Mobilfunk – und Ihre Chance, in einem der stärksten Vodafone-Teams in NRW durchzustarten." />
+<meta name="theme-color" content="#0F4C47" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:title" content="Alessandro Corona – Beratung & Karriere" />
+<meta property="og:description" content="TÜV-geprüfte Beratung zu Internet, TV & Mobilfunk – und Ihre Karriere im ausgezeichneten NRW-Team." />
+<meta property="og:url" content="https://alessandrocorona.de/" />
+<meta property="og:image" content="https://alessandrocorona.de/wp-content/uploads/2025/12/5be2e788-e834-40d9-9725-27706c261c5c.jpeg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #F4F6F5;
+    --surface: #FFFFFF;
+    --surface-soft: #EEF2F0;
+    --ink: #14201D;
+    --muted: #54635E;
+    --primary: #0F4C47;
+    --primary-deep: #0A3733;
+    --teal: #1C8077;
+    --amber: #E0A02C;
+    --amber-soft: #F7EBD2;
+    --line: #E1E7E4;
+    --shadow-sm: 0 2px 8px rgba(15, 76, 71, .06);
+    --shadow-md: 0 18px 40px -22px rgba(10, 55, 51, .35);
+    --shadow-lg: 0 30px 70px -30px rgba(10, 55, 51, .45);
+    --radius: 18px;
+    --radius-sm: 12px;
+    --maxw: 1140px;
+    --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, sans-serif;
+    --ease: cubic-bezier(.22, 1, .36, 1);
+    --ease-soft: cubic-bezier(.4, 0, .2, 1);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; font-family: var(--font-body); color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.08; letter-spacing: -.02em; }
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: .82rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); }
+  .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--amber); border-radius: 2px; }
+
+  /* ---------- Scroll progress ---------- */
+  .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; transform: scaleX(0); transform-origin: 0 50%; z-index: 100; background: linear-gradient(90deg, var(--teal), var(--amber)); will-change: transform; }
+
+  /* ---------- Buttons ---------- */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-family: var(--font-body); font-weight: 600; font-size: 1rem; padding: 14px 26px; border-radius: 999px; border: 1.5px solid transparent; cursor: pointer; transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .25s var(--ease-soft), color .25s var(--ease-soft), border-color .25s var(--ease-soft); text-align: center; will-change: transform; }
+  .btn svg { width: 18px; height: 18px; transition: transform .35s var(--ease); }
+  .btn:hover svg { transform: translateX(3px); }
+  .btn-primary { background: var(--primary); color: #fff; box-shadow: var(--shadow-md); }
+  .btn-primary:hover { background: var(--primary-deep); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .btn-primary:active { transform: translateY(-1px) scale(.99); }
+  .btn-amber { background: var(--amber); color: #3a2a06; box-shadow: 0 16px 36px -18px rgba(224,160,44,.7); }
+  .btn-amber:hover { background: #efb245; transform: translateY(-3px); box-shadow: 0 22px 46px -18px rgba(224,160,44,.8); }
+  .btn-amber:active { transform: translateY(-1px) scale(.99); }
+  .btn-ghost { background: transparent; color: var(--primary); border-color: rgba(15,76,71,.25); }
+  .btn-ghost:hover { background: var(--surface); border-color: var(--primary); transform: translateY(-3px); }
+  .btn-light { background: #fff; color: var(--primary-deep); box-shadow: var(--shadow-md); }
+  .btn-light:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .btn-outline-light { background: transparent; color: #EAF2F0; border-color: rgba(255,255,255,.3); }
+  .btn-outline-light:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.6); transform: translateY(-3px); }
+
+  /* ---------- Header ---------- */
+  header.site { position: sticky; top: 0; z-index: 60; background: rgba(244,246,245,.82); backdrop-filter: saturate(140%) blur(12px); border-bottom: 1px solid var(--line); transition: box-shadow .3s var(--ease-soft), background .3s var(--ease-soft); }
+  header.site.scrolled { box-shadow: 0 10px 30px -20px rgba(10,55,51,.4); background: rgba(244,246,245,.92); }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 32px 0; transition: padding .6s var(--ease); }
+  header.site.scrolled .nav { padding: 11px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; transform-origin: left center; transition: transform .6s var(--ease); }
+  header.site.scrolled .brand { transform: scale(.84); }
+  .brand img { width: 58px; height: 58px; border-radius: 12px; object-fit: cover; box-shadow: var(--shadow-sm); transition: transform .5s var(--ease); }
+  .brand:hover img { transform: rotate(-4deg) scale(1.05); }
+  .brand .name { font-family: var(--font-display); font-weight: 700; font-size: 1.22rem; letter-spacing: -.01em; line-height: 1.1; }
+  .brand .role { font-size: .74rem; color: var(--muted); letter-spacing: .02em; }
+  .nav-links { display: flex; align-items: center; gap: 26px; }
+  .nav-links a { font-size: .95rem; font-weight: 500; color: var(--ink); position: relative; padding: 4px 0; }
+  .nav-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--amber); border-radius: 2px; transform: scaleX(0); transform-origin: right center; transition: transform .5s var(--ease); }
+  .nav-links a:hover::after, .nav-links a:focus-visible::after { transform: scaleX(1); transform-origin: left center; }
+  .nav-cta { display: flex; align-items: center; gap: 12px; }
+  .nav-cta .btn { padding: 10px 18px; font-size: .9rem; }
+  .menu-toggle { display: none; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; width: 44px; height: 44px; cursor: pointer; align-items: center; justify-content: center; color: var(--ink); }
+  .menu-toggle svg { width: 22px; height: 22px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: clamp(44px, 6vw, 88px) 0 clamp(40px, 5vw, 72px); position: relative; overflow: hidden; }
+  .hero-blob { position: absolute; inset: 0; z-index: 0; pointer-events: none; will-change: transform; }
+  .hero-blob::before, .hero-blob::after { content: ""; position: absolute; border-radius: 50%; filter: blur(8px); }
+  .hero-blob::before { width: 620px; height: 460px; right: -6%; top: -14%; background: radial-gradient(closest-side, rgba(28,128,119,.18), transparent 72%); }
+  .hero-blob::after { width: 520px; height: 380px; left: -10%; top: 8%; background: radial-gradient(closest-side, rgba(224,160,44,.14), transparent 72%); }
+  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.06fr .94fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+  .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 700; margin: 18px 0 0; }
+  .hero h1 .hl { color: var(--primary); position: relative; white-space: nowrap; }
+  .hero h1 .hl::after { content: ""; position: absolute; left: 0; right: 0; bottom: .06em; height: .28em; background: var(--amber-soft); z-index: -1; border-radius: 4px; transform: scaleX(0); transform-origin: 0 50%; transition: transform .7s .5s var(--ease); }
+  .reveal.in .hl::after { transform: scaleX(1); }
+  .hero p.lead { font-size: 1.1rem; color: var(--muted); margin: 18px 0 0; max-width: 32em; }
+  .hero p.lead strong { color: var(--ink); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+  .trust-row { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 26px; }
+  .trust-chip { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; font-weight: 500; color: var(--ink); }
+  .trust-chip svg { width: 18px; height: 18px; color: var(--teal); flex: none; }
+
+  /* Hero portrait */
+  .hero-photo { position: relative; }
+  .hero-photo .frame { position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--line); aspect-ratio: 4 / 4.4; background: var(--surface-soft); }
+  .hero-photo .frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .9s var(--ease); }
+  .hero-photo:hover .frame img { transform: scale(1.04); }
+  .hero-photo .frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,55,51,.42), transparent 46%); }
+  .hero-photo .name-tag { position: absolute; left: 18px; bottom: 18px; z-index: 2; color: #fff; }
+  .hero-photo .name-tag .n { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+  .hero-photo .name-tag .r { font-size: .9rem; opacity: .92; }
+  .hero-photo .tuev-float { position: absolute; right: -12px; top: 22px; z-index: 3; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 10px; will-change: transform; }
+  .hero-photo .tuev-float .seal { width: 38px; height: 38px; flex: none; border-radius: 50%; border: 2px solid var(--amber); color: #9A6B12; background: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: .58rem; }
+  .hero-photo .tuev-float .t { font-size: .78rem; line-height: 1.25; }
+  .hero-photo .tuev-float .t b { font-family: var(--font-display); display: block; }
+  .hero-photo .signal { position: absolute; left: -12px; bottom: 70px; z-index: 3; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; box-shadow: var(--shadow-md); display: flex; align-items: flex-end; gap: 4px; height: 44px; }
+  .hero-photo .signal i { width: 5px; border-radius: 3px; background: var(--teal); opacity: .35; animation: bars 1.4s var(--ease-soft) infinite; transform-origin: bottom; }
+  .hero-photo .signal i:nth-child(1){ height: 38%; animation-delay: 0s; }
+  .hero-photo .signal i:nth-child(2){ height: 60%; animation-delay: .18s; }
+  .hero-photo .signal i:nth-child(3){ height: 82%; animation-delay: .36s; }
+  .hero-photo .signal i:nth-child(4){ height: 100%; animation-delay: .54s; }
+  @keyframes bars { 0%,100%{ opacity: .3; transform: scaleY(.65); } 50%{ opacity: 1; transform: scaleY(1); } }
+
+  /* ---------- Sections ---------- */
+  section { padding: clamp(54px, 7vw, 92px) 0; }
+  .section-head { max-width: 42rem; margin-bottom: 44px; }
+  .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .section-head h2 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); font-weight: 700; margin-top: 14px; }
+  .section-head p { color: var(--muted); font-size: 1.06rem; margin: 14px 0 0; }
+
+  /* ---------- Erfolge: Stat band ---------- */
+  .proof { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: clamp(36px, 4vw, 56px) 0; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .stat { text-align: center; padding: 10px; }
+  .stat .num { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 4.6vw, 3.1rem); color: var(--primary); letter-spacing: -.02em; line-height: 1; }
+  .stat .num .u { color: var(--amber); }
+  .stat .k { margin-top: 10px; font-size: .92rem; color: var(--muted); }
+  .stat .badge-ic { width: 48px; height: 48px; margin: 0 auto 8px; border-radius: 14px; background: var(--surface-soft); color: var(--teal); display: flex; align-items: center; justify-content: center; }
+  .stat .badge-ic svg { width: 26px; height: 26px; }
+  .stat .big-label { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.5rem, 3vw, 2rem); color: var(--primary); line-height: 1.05; }
+
+  /* ---------- Awards cards ---------- */
+  .awards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .award { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .3s var(--ease-soft); will-change: transform; }
+  .award:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: #CBD8D3; }
+  .award .ph { aspect-ratio: 16 / 10; overflow: hidden; background: var(--surface-soft); }
+  .award .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+  .award:hover .ph img { transform: scale(1.06); }
+  .award .bd { padding: 24px 26px 28px; }
+  .award .bd .tag { display: inline-flex; align-items: center; gap: 7px; font-size: .74rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #9A6B12; background: var(--amber-soft); padding: 5px 11px; border-radius: 999px; }
+  .award .bd .tag svg { width: 14px; height: 14px; }
+  .award .bd h3 { font-size: 1.25rem; font-weight: 600; margin-top: 14px; }
+  .award .bd p { color: var(--muted); margin: 10px 0 0; font-size: .98rem; }
+
+  /* ---------- Leistungen ---------- */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .service { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow-sm); transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .3s var(--ease-soft); position: relative; will-change: transform; }
+  .service:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: #CBD8D3; }
+  .service .ic { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: linear-gradient(150deg, rgba(15,76,71,.10), rgba(28,128,119,.16)); color: var(--primary); margin-bottom: 18px; transition: transform .4s var(--ease); }
+  .service:hover .ic { transform: scale(1.08) rotate(-3deg); }
+  .service .ic svg { width: 25px; height: 25px; }
+  .service h3 { font-size: 1.22rem; font-weight: 600; min-height: 2.7rem; display: flex; align-items: flex-start; }
+  .service .tag { min-height: 1.7rem; }
+  .service .tag { display: inline-block; margin-top: 8px; font-size: .74rem; font-weight: 600; letter-spacing: .04em; color: var(--primary); background: var(--surface-soft); padding: 4px 10px; border-radius: 999px; }
+  .service p { color: var(--muted); margin: 12px 0 0; font-size: .98rem; }
+  .services-note { margin-top: 32px; text-align: center; font-size: 1.05rem; color: var(--ink); }
+  .services-note b { color: var(--primary); }
+
+  /* ---------- Ersparnis-Rechner ---------- */
+  .calc { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+  .calc-panel { background: linear-gradient(160deg, var(--primary), var(--primary-deep)); color: #EAF2F0; border-radius: 22px; padding: clamp(26px, 4vw, 40px); box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+  .calc-panel::after { content: ""; position: absolute; width: 320px; height: 320px; right: -80px; top: -80px; border-radius: 50%; background: radial-gradient(closest-side, rgba(224,160,44,.22), transparent 70%); pointer-events: none; }
+  .calc-panel .lbl { font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(234,242,240,.7); }
+  .calc-amount { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.6rem, 6vw, 3.6rem); line-height: 1; margin: 6px 0 2px; letter-spacing: -.02em; color: #fff; }
+  .calc-amount .cur { font-size: .55em; vertical-align: super; margin-right: 4px; color: var(--amber); }
+  .calc-sub { font-size: .95rem; color: rgba(234,242,240,.78); }
+  .calc-readout { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 26px; position: relative; z-index: 1; }
+  .calc-readout.three { grid-template-columns: repeat(3, 1fr); }
+  .calc-readout .box { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: 14px 16px; }
+  .calc-readout .box .k { font-size: .76rem; letter-spacing: .04em; text-transform: uppercase; color: rgba(234,242,240,.66); }
+  .calc-readout .box .v { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; color: #fff; margin-top: 4px; }
+  .calc-readout .box.save .v { color: var(--amber); }
+  .calc-controls h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: 700; margin-top: 14px; }
+  .calc-controls p { color: var(--muted); margin: 14px 0 0; font-size: 1.02rem; }
+  .slider-wrap { margin: 30px 0 10px; }
+  .slider-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+  .slider-top .sk { font-weight: 600; font-size: .95rem; }
+  .slider-top .sv { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--primary); }
+  input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 10px; border-radius: 999px; background: var(--surface-soft); outline: none; cursor: pointer; }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 28px; height: 28px; border-radius: 50%; background: var(--primary); border: 4px solid #fff; box-shadow: var(--shadow-md); transition: transform .2s var(--ease); }
+  input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.12); }
+  input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--primary); border: 4px solid #fff; box-shadow: var(--shadow-md); cursor: pointer; }
+  .calc-disclaimer { font-size: .82rem; color: var(--muted); margin-top: 18px; }
+  .calc-controls .btn { margin-top: 22px; }
+
+  /* ---------- Karriere (dark) ---------- */
+  .career { background: linear-gradient(165deg, var(--primary), var(--primary-deep)); color: #EAF2F0; position: relative; overflow: hidden; }
+  .career::before { content: ""; position: absolute; width: 460px; height: 460px; left: -140px; bottom: -160px; border-radius: 50%; background: radial-gradient(closest-side, rgba(224,160,44,.16), transparent 70%); pointer-events: none; }
+  .career .eyebrow { color: #8FD3C9; }
+  .career .eyebrow::before { background: var(--amber); }
+  .career .section-head h2 { color: #fff; }
+  .career .section-head p { color: rgba(234,242,240,.82); }
+  .career-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; z-index: 1; }
+  .bcard { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); padding: 26px; transition: transform .4s var(--ease), background .3s var(--ease-soft); will-change: transform; }
+  .bcard:hover { transform: translateY(-5px); background: rgba(255,255,255,.1); }
+  .bcard .ic { width: 48px; height: 48px; border-radius: 13px; background: rgba(143,211,201,.16); color: #8FD3C9; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .bcard .ic svg { width: 24px; height: 24px; }
+  .bcard h3 { font-size: 1.18rem; font-weight: 600; color: #fff; }
+  .bcard p { color: rgba(234,242,240,.78); margin: 10px 0 0; font-size: .96rem; }
+
+  .pay-banner { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 26px; background: rgba(224,160,44,.12); border: 1px solid rgba(224,160,44,.4); border-radius: var(--radius); padding: 20px 24px; position: relative; z-index: 1; }
+  .pay-banner .ic { width: 46px; height: 46px; flex: none; border-radius: 12px; background: var(--amber); color: #3a2a06; display: flex; align-items: center; justify-content: center; }
+  .pay-banner .ic svg { width: 24px; height: 24px; }
+  .pay-banner .tx b { font-family: var(--font-display); font-size: 1.1rem; color: #fff; }
+  .pay-banner .tx p { margin: 2px 0 0; color: rgba(234,242,240,.8); font-size: .95rem; }
+
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 30px; position: relative; z-index: 1; }
+  .step { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13); border-radius: var(--radius); padding: 26px; position: relative; transition: transform .4s var(--ease), background .3s var(--ease-soft); will-change: transform; }
+  .step:hover { transform: translateY(-5px); background: rgba(255,255,255,.09); }
+  .step .no { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; color: var(--primary-deep); background: var(--amber); width: 40px; height: 40px; border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .step h3 { font-size: 1.12rem; font-weight: 600; color: #fff; }
+  .step p { color: rgba(234,242,240,.78); margin: 9px 0 0; font-size: .95rem; }
+  .career-cta { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; position: relative; z-index: 1; }
+  .career-cta .note { color: rgba(234,242,240,.72); font-size: .92rem; }
+
+  /* ---------- Über mich / Team ---------- */
+  .about { background: var(--bg); }
+  .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(30px, 5vw, 64px); align-items: center; }
+  .about-photo { position: relative; }
+  .about-photo img { width: 100%; border-radius: 22px; box-shadow: var(--shadow-lg); object-fit: cover; border: 1px solid var(--line); }
+  .about-photo .float { position: absolute; left: -14px; bottom: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 10px; will-change: transform; }
+  .about-photo .float svg { width: 22px; height: 22px; color: var(--teal); }
+  .about-photo .float .t { font-size: .82rem; line-height: 1.3; }
+  .about-photo .float .t b { font-family: var(--font-display); display: block; }
+  .about-body h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 700; margin-top: 14px; }
+  .about-body p { color: var(--muted); margin: 16px 0 0; font-size: 1.04rem; }
+  .about-body p strong { color: var(--ink); }
+  .about-cert { margin-top: 26px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px 20px; }
+  .about-cert .seal { width: 52px; height: 52px; flex: none; border-radius: 50%; border: 2.5px solid var(--amber); color: #9A6B12; background: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: .66rem; text-align: center; line-height: 1; }
+  .about-cert .ct { flex: 1 1 200px; }
+  .about-cert .ct b { font-family: var(--font-display); }
+  .about-cert .ct p { margin: 2px 0 0; font-size: .9rem; color: var(--muted); }
+
+  .team { margin-top: clamp(40px, 5vw, 64px); }
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .member { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow-sm); transition: transform .4s var(--ease), box-shadow .4s var(--ease); will-change: transform; }
+  .member:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+  .member .av { width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(150deg, var(--primary), var(--teal)); color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); }
+  .member h3 { font-size: 1.12rem; font-weight: 600; margin-top: 16px; }
+  .member .role { font-size: .86rem; color: var(--teal); font-weight: 600; margin-top: 2px; }
+  .member p { color: var(--muted); font-size: .94rem; margin: 10px 0 0; }
+
+  /* ---------- Galerie ---------- */
+  .gallery-sec { background: var(--surface); border-top: 1px solid var(--line); }
+  .gallery { column-count: 3; column-gap: 14px; }
+  .gallery figure { margin: 0 0 14px; overflow: hidden; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface-soft); break-inside: avoid; }
+  .gallery figure img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .9s var(--ease); }
+  .gallery figure:hover img { transform: scale(1.05); }
+
+  /* ---------- Kontakt ---------- */
+  .contact { background: var(--primary-deep); color: #EAF2F0; }
+  .contact .section-head h2 { color: #fff; }
+  .contact .eyebrow { color: #8FD3C9; }
+  .contact .eyebrow::before { background: var(--amber); }
+  .contact .section-head p { color: rgba(234,242,240,.78); }
+  .contact-grid { display: grid; grid-template-columns: 1fr .9fr; gap: clamp(30px, 5vw, 56px); align-items: start; }
+  .form-card { background: var(--surface); color: var(--ink); border-radius: 22px; padding: clamp(26px, 4vw, 40px); box-shadow: var(--shadow-lg); }
+  .field { margin-bottom: 18px; }
+  .field.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 0; }
+  .field.row > div { margin-bottom: 18px; }
+  label { display: block; font-size: .88rem; font-weight: 600; margin-bottom: 7px; }
+  label .opt { color: var(--muted); font-weight: 400; }
+  input, textarea, select { width: 100%; font-family: var(--font-body); font-size: 1rem; color: var(--ink); padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; transition: border-color .2s var(--ease-soft), box-shadow .2s var(--ease-soft); }
+  select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%2354635E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M5 8l5 5 5-5'/></svg>"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 42px; }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 4px rgba(28,128,119,.14); }
+  textarea { resize: vertical; min-height: 100px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .consent { display: flex; gap: 11px; align-items: flex-start; margin: 4px 0 22px; }
+  .consent input { width: 20px; height: 20px; flex: none; margin-top: 2px; accent-color: var(--primary); }
+  .consent label { font-size: .86rem; font-weight: 400; color: var(--muted); margin: 0; }
+  .form-card .btn-primary { width: 100%; }
+  .form-note { margin: 14px 0 0; font-size: .82rem; color: var(--muted); text-align: center; }
+  .contact-info { display: flex; flex-direction: column; gap: 14px; }
+  .info-card { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-sm); padding: 18px 20px; transition: background .25s var(--ease-soft), transform .35s var(--ease); will-change: transform; }
+  a.info-card:hover { background: rgba(255,255,255,.12); transform: translateY(-3px); }
+  .info-card .ic { width: 44px; height: 44px; flex: none; border-radius: 12px; background: rgba(143,211,201,.16); color: #8FD3C9; display: flex; align-items: center; justify-content: center; }
+  .info-card .ic svg { width: 22px; height: 22px; }
+  .info-card .lbl { font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; color: rgba(234,242,240,.66); }
+  .info-card .val { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: #fff; }
+  .social-row { display: flex; gap: 12px; margin-top: 6px; }
+  .social-row a { width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; color: #EAF2F0; transition: background .25s var(--ease-soft), transform .35s var(--ease); will-change: transform; }
+  .social-row a:hover { background: var(--amber); color: var(--primary-deep); transform: translateY(-3px); }
+  .social-row svg { width: 20px; height: 20px; }
+
+  /* ---------- Footer ---------- */
+  footer.site { background: var(--ink); color: rgba(255,255,255,.78); padding: 56px 0 30px; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; }
+  .foot-brand .name { font-family: var(--font-display); font-weight: 700; color: #fff; font-size: 1.25rem; }
+  .foot-brand p { margin: 12px 0 0; font-size: .95rem; max-width: 30ch; color: rgba(255,255,255,.62); }
+  .foot-col h4 { font-family: var(--font-display); font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.5); margin: 0 0 16px; font-weight: 600; }
+  .foot-col a { position: relative; display: inline-block; padding: 6px 0; font-size: .96rem; color: rgba(255,255,255,.78); transition: color .25s var(--ease-soft); }
+  .foot-col a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 1.5px; background: var(--amber); transform: scaleX(0); transform-origin: right center; transition: transform .5s var(--ease); }
+  .foot-col a:hover { color: var(--amber); }
+  .foot-col a:hover::after { transform: scaleX(1); transform-origin: left center; }
+  .foot-bottom { margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.12); display: flex; flex-wrap: wrap; gap: 12px 22px; align-items: center; justify-content: space-between; font-size: .86rem; color: rgba(255,255,255,.55); }
+  .foot-bottom a { color: rgba(255,255,255,.7); text-decoration: underline; text-underline-offset: 2px; }
+  .foot-bottom .legal { display: flex; gap: 18px; flex-wrap: wrap; }
+
+  /* ---------- Back to top ---------- */
+  .to-top { position: fixed; right: 22px; bottom: 22px; z-index: 80; width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-lg); opacity: 0; transform: translateY(16px) scale(.9); pointer-events: none; transition: opacity .35s var(--ease), transform .35s var(--ease), background .25s var(--ease-soft); }
+  .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+  .to-top:hover { background: var(--primary-deep); transform: translateY(-3px); }
+  .to-top svg { width: 22px; height: 22px; }
+
+  /* ---------- Reveal animation ---------- */
+  .reveal { opacity: 0; transform: translateY(32px) scale(.99); transition: opacity 1s var(--ease), transform 1s var(--ease); transition-delay: var(--d, 0s); will-change: opacity, transform; }
+  .reveal.in { opacity: 1; transform: none; will-change: auto; }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-photo { max-width: 440px; }
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 28px 18px; }
+    .awards { grid-template-columns: 1fr; }
+    .calc-grid { grid-template-columns: 1fr; }
+    .career-benefits { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-photo { max-width: 420px; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery { column-count: 2; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .services { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 760px) {
+    .nav-links, .nav-cta .btn-ghost { display: none; }
+    .menu-toggle { display: flex; }
+    .nav-links.open { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; position: absolute; top: 72px; left: 16px; right: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px; box-shadow: var(--shadow-lg); }
+    .nav-links.open a { width: 100%; padding: 12px 8px; border-bottom: 1px solid var(--line); }
+    .nav-links.open a:last-child { border-bottom: none; }
+    .services { grid-template-columns: 1fr; }
+    .calc-readout { grid-template-columns: 1fr; }
+    .calc-readout.three { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+    .gallery { column-count: 1; }
+    .field.row { grid-template-columns: 1fr; gap: 0; }
+    .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+    .reveal { opacity: 1; transform: none; }
+    .hero-blob { display: none; }
+  }
+
+  :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="progress" aria-hidden="true"></div>
+
+<!-- ===== Header ===== -->
+<header class="site" id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Alessandro Corona – Startseite">
+      <img src="https://alessandrocorona.de/wp-content/uploads/2025/12/5be2e788-e834-40d9-9725-27706c261c5c.jpeg" alt="Logo Alessandro Corona" />
+      <span>
+        <span class="name">Alessandro Corona</span><br />
+        <span class="role">Beratung &amp; Karriere · Vodafone</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Hauptnavigation">
+      <a href="#erfolge">Erfolge</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#karriere">Karriere</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="tel:+4915120105783">Anrufen</a>
+      <a class="btn btn-primary" href="#karriere">Jetzt bewerben</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero-blob" id="heroBlob"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Im Auftrag für Vodafone · TÜV-geprüft</span>
+        <h1>Starke <span class="hl">Beratung</span> und ein Team mit echten <span class="hl">Perspektiven</span>.</h1>
+        <p class="lead">Ob Sie als Kunde den passenden Tarif für Internet, TV &amp; Mobilfunk suchen oder als Bewerber im Vertrieb durchstarten wollen – bei <strong>Alessandro Corona</strong> und seinem ausgezeichneten NRW-Team sind Sie richtig.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#karriere">
+            Im Team durchstarten
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#leistungen">Kostenlose Beratung</a>
+        </div>
+        <div class="trust-row">
+          <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 75 % der Professional NRW im Team</span>
+          <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Club der Besten 2026</span>
+          <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> TÜV-geprüft</span>
+        </div>
+      </div>
+
+      <div class="hero-photo reveal" style="--d:.12s">
+        <div class="frame">
+          <img src="https://alessandrocorona.de/wp-content/uploads/2025/12/IMG_2481-683x1024.jpeg" alt="Alessandro Corona, Teamleiter im Direktvertrieb" />
+        </div>
+        <div class="name-tag">
+          <div class="n">Alessandro Corona</div>
+          <div class="r">Teamleiter &amp; CEO · Direktvertrieb</div>
+        </div>
+        <a class="tuev-float" href="https://www.certipedia.com/quality_marks/0217464872?locale=de" target="_blank" rel="noopener" aria-label="Offizielles TÜV-Zertifikat ansehen">
+          <div class="seal" aria-hidden="true">TÜV</div>
+          <div class="t"><b>Geprüft</b>&amp; zertifiziert</div>
+        </a>
+        <div class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Erfolge: Stat band ===== -->
+  <section id="erfolge" class="proof" style="padding-top: clamp(40px,5vw,64px); padding-bottom: clamp(40px,5vw,64px);">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat reveal">
+          <div class="num"><span data-count data-to="75">0</span><span class="u">%</span></div>
+          <div class="k">der Vodafone Professional NRW in unserem Team</div>
+        </div>
+        <div class="stat reveal" style="--d:.06s">
+          <div class="num"><span data-count data-to="50">0</span><span class="u">%</span></div>
+          <div class="k">der NRW-Plätze im „Club der Besten" 2026</div>
+        </div>
+        <div class="stat reveal" style="--d:.12s">
+          <div class="badge-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M5 4H3v2a3 3 0 0 0 3 3M19 4h2v2a3 3 0 0 1-3 3"/></svg></div>
+          <div class="big-label">Top-Team<br>in NRW</div>
+        </div>
+        <div class="stat reveal" style="--d:.18s">
+          <div class="badge-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="big-label">TÜV-<br>geprüft</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Awards ===== -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Erfolge</span>
+        <h2>Ein Team, das ausgezeichnet wird</h2>
+        <p>Unsere Auszeichnungen stehen für Stärke, Kompetenz und das Vertrauen, das uns entgegengebracht wird.</p>
+      </div>
+      <div class="awards">
+        <article class="award reveal" style="--d:.05s">
+          <div class="ph"><img src="https://alessandrocorona.de/wp-content/uploads/2026/01/Pokale-1024x768.jpeg" alt="Pokale und Auszeichnungen des Teams" loading="lazy" decoding="async" /></div>
+          <div class="bd">
+            <h3>Vodafone Professional</h3>
+            <p>75 % der Professional NRW sind in unserem Team vertreten – ein außergewöhnliches Ergebnis, das unsere Stärke zeigt.</p>
+          </div>
+        </article>
+        <article class="award reveal" style="--d:.13s">
+          <div class="ph"><img src="https://alessandrocorona.de/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-02-at-15.40.37-1024x683.jpeg" alt="Team feiert gemeinsamen Erfolg" loading="lazy" decoding="async" /></div>
+          <div class="bd">
+            <h3>Club der Besten</h3>
+            <p>50 % der NRW-Plätze im Vodafone „Club der Besten" wurden von Beratern aus meinem Team erreicht.</p>
+          </div>
+        </article>
+        <article class="award reveal" style="--d:.21s">
+          <div class="ph"><img src="https://alessandrocorona.de/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-10-at-16.49.04-e1768060591835-1024x1001.jpeg" alt="Alessandro Corona mit seinem Team" loading="lazy" decoding="async" style="object-position: center 20%;" /></div>
+          <div class="bd">
+            <h3>Alessandro Corona</h3>
+            <p>Als Teamleiter &amp; CEO steht Alessandro Corona hinter diesen Erfolgen – mit ehrlicher Beratung und einem Team, das in NRW Maßstäbe setzt.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Leistungen ===== -->
+  <section id="leistungen" class="calc" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Für Kunden</span>
+        <h2>Was ich für Sie tun kann</h2>
+        <p>Ich berate verständlich, ehrlich und individuell – abgestimmt auf Ihre tatsächlichen Bedürfnisse.</p>
+      </div>
+      <div class="services">
+        <article class="service reveal" style="--d:.05s">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Tarif- &amp; Vertragsberatung</h3>
+          <span class="tag">Im Auftrag für Vodafone</span>
+          <p>Ich finde den passenden Internet-, TV- oder Mobilfunktarif für Ihre Situation – klar erklärt und ohne versteckte Kosten.</p>
+        </article>
+        <article class="service reveal" style="--d:.13s">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <h3>Kostenlose Vertragsprüfung</h3>
+          <span class="tag">Unverbindlich</span>
+          <p>Ich prüfe Ihre bestehenden Verträge und zeige Ihnen, ob Sie sparen oder bessere Konditionen erhalten können.</p>
+        </article>
+        <article class="service reveal" style="--d:.21s">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+          <h3>Hilfe bei Problemen &amp; Beschwerden</h3>
+          <span class="tag">Vodafone · Telekom · O2 · 1&amp;1</span>
+          <p>Falsche Beratung, Ärger mit Anbietern oder unklare Verträge? Ich unterstütze Sie bei Widerruf, Klärung und Reklamation.</p>
+        </article>
+      </div>
+      <p class="services-note reveal">Verständlich, <b>ehrlich</b> und individuell – abgestimmt auf das, was Sie wirklich&nbsp;brauchen.</p>
+    </div>
+  </section>
+
+  <!-- ===== Ersparnis-Rechner ===== -->
+  <section id="rechner" class="calc">
+    <div class="wrap calc-grid">
+      <div class="calc-controls reveal">
+        <span class="eyebrow">Ersparnis-Rechner</span>
+        <h2>Was zahlen Sie aktuell?</h2>
+        <p>Stellen Sie Ihre monatlichen Kosten für Internet, TV &amp; Mobilfunk ein. Der Rechner zeigt Ihnen sofort, wo sich ein genauer Blick lohnen kann.</p>
+        <div class="slider-wrap">
+          <div class="slider-top">
+            <span class="sk">Monatliche Kosten</span>
+            <span class="sv" id="sliderVal">55 €</span>
+          </div>
+          <input type="range" id="costSlider" min="15" max="120" step="1" value="55" aria-label="Monatliche Kosten in Euro" />
+        </div>
+        <p class="calc-disclaimer">Unverbindliche Beispielrechnung. Ihr tatsächliches Einsparpotenzial ermittle ich kostenlos im persönlichen Vertrags-Check.</p>
+        <a class="btn btn-primary" href="#kontakt">Kostenlosen Check anfragen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="calc-panel reveal" style="--d:.1s">
+        <div class="lbl">Mögliche Ersparnis pro Jahr</div>
+        <div class="calc-amount"><span class="cur">bis zu</span><span id="saveYear">0</span> €</div>
+        <div class="calc-sub">basierend auf einer beispielhaften Optimierung Ihrer Tarife</div>
+        <div class="calc-readout three">
+          <div class="box"><div class="k">Aktuell / Monat</div><div class="v" id="costMonth">0 €</div></div>
+          <div class="box"><div class="k">Aktuell / Jahr</div><div class="v" id="costYear">0 €</div></div>
+          <div class="box save"><div class="k">Ersparnis / Monat</div><div class="v" id="saveMonth">0 €</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Karriere ===== -->
+  <section id="karriere" class="career">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Karriere im Außendienst</span>
+        <h2>Werde Teil eines erfolgreichen Teams</h2>
+        <p>Starte flexibel, selbstbestimmt und erfolgreich im Vertrieb durch – mit strukturierter Einarbeitung und persönlicher Betreuung ab dem ersten Tag.</p>
+      </div>
+
+      <div class="career-benefits">
+        <div class="bcard reveal" style="--d:.05s">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Flexible Arbeitszeiten</h3>
+          <p>Gestalte deinen Arbeitstag frei und passe ihn optimal an deine Lebenssituation an – für mehr Zufriedenheit und bessere Leistung.</p>
+        </div>
+        <div class="bcard reveal" style="--d:.12s">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <h3>Umfassende Einarbeitung</h3>
+          <p>Wir begleiten dich Schritt für Schritt, damit du sicher und selbstbewusst deine neue Karriere im Vertrieb beginnst.</p>
+        </div>
+        <div class="bcard reveal" style="--d:.19s">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+          <h3>Persönliche Betreuung</h3>
+          <p>Unser Team steht dir jederzeit zur Seite und unterstützt dich mit klaren Prozessen und individueller Beratung.</p>
+        </div>
+      </div>
+
+      <div class="pay-banner reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="tx">
+          <b>Leistungsorientierte Vergütung</b>
+          <p>Wer arbeitet, soll auch verdienen – dein Einsatz bestimmt dein Einkommen, mit fairer und transparenter Abrechnung.</p>
+        </div>
+      </div>
+
+      <div class="section-head reveal" style="margin: 48px 0 0; max-width:42rem;">
+        <span class="eyebrow">In 3 Schritten</span>
+        <h2 style="color:#fff;">So startest du deine Karriere</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal" style="--d:.05s">
+          <div class="no">01</div>
+          <h3>Bewerbung</h3>
+          <p>Fülle das Formular aus und du bekommst zeitnah einen Anruf von mir oder unserem Gebietsmanager.</p>
+        </div>
+        <div class="step reveal" style="--d:.12s">
+          <div class="no">02</div>
+          <h3>Probetag</h3>
+          <p>Du schaust dir mit einem erfahrenen Berater den Arbeitstag in der Praxis an – ganz unverbindlich.</p>
+        </div>
+        <div class="step reveal" style="--d:.19s">
+          <div class="no">03</div>
+          <h3>Start in den Vertrieb</h3>
+          <p>Strukturierte Einarbeitung und Unterstützung ab dem ersten Tag – wir lassen dich nicht allein.</p>
+        </div>
+      </div>
+
+      <div class="career-cta reveal">
+        <a class="btn btn-amber" href="#kontakt">
+          Jetzt unverbindlich bewerben
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="note">Mir geht es um Menschen, die bereit sind zu arbeiten, Verantwortung zu übernehmen und sich weiterzuentwickeln.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Über mich / Team ===== -->
+  <section id="ueber-mich" class="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <img src="https://alessandrocorona.de/wp-content/uploads/2026/01/IMG_0120-scaled-e1767338910330-931x1024.jpeg" alt="Porträtfoto von Alessandro Corona" loading="lazy" decoding="async" />
+          <div class="float">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span class="t"><b>Seriös &amp; transparent</b>Beratung mit klarem Gewissen</span>
+          </div>
+        </div>
+        <div class="about-body reveal" style="--d:.1s">
+          <span class="eyebrow">Über mich</span>
+          <h2>Mein Name ist Alessandro Corona</h2>
+          <p>Ich bin seit mehreren Jahren als <strong>Teamleiter im Direktvertrieb (D2D)</strong> aktiv – nicht als Theoretiker, sondern draußen, im echten Geschäft. Ich habe den klassischen Weg im Door-to-Door selbst erlebt: Ablehnung, Erfolg, Disziplin, Struktur.</p>
+          <p>Bei Internet, Kabel, Mobilfunk und Tarifwechsel arbeite ich <strong>in Zusammenarbeit mit Vodafone</strong>. Mir ist <strong>ehrliche Beratung ohne Verkaufsdruck</strong> wichtig – und ich begleite meine Kundinnen und Kunden auch über den Vertragsabschluss hinaus.</p>
+          <div class="about-cert">
+            <div class="seal" aria-hidden="true">TÜV</div>
+            <div class="ct">
+              <b>TÜV-geprüfte Qualität</b>
+              <p>Persönlich vom TÜV geprüft und zertifiziert. Transparenz und Neutralität stehen bei mir an erster Stelle.</p>
+            </div>
+            <a class="btn btn-ghost" href="https://www.certipedia.com/quality_marks/0217464872?locale=de" target="_blank" rel="noopener">Offizielles TÜV-Zertifikat ansehen</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team">
+        <div class="section-head reveal" style="margin-bottom: 28px;">
+          <span class="eyebrow">Das Kompetenzteam</span>
+          <h2>Mentoren &amp; Teamleitung</h2>
+        </div>
+        <div class="team-grid">
+          <div class="member reveal" style="--d:.05s">
+            <div class="av" aria-hidden="true">ND</div>
+            <h3>Nenad Dojcinovic</h3>
+            <div class="role">Mentor</div>
+            <p>Ausgezeichnet für höchste Qualitätsstandards und herausragende Arbeit im Team.</p>
+          </div>
+          <div class="member reveal" style="--d:.12s">
+            <div class="av" aria-hidden="true">BC</div>
+            <h3>Blerton Cakiqi</h3>
+            <div class="role">Mentor</div>
+            <p>Begleitet neue Berater mit Erfahrung und klarer Struktur auf ihrem Weg in den Vertrieb.</p>
+          </div>
+          <div class="member reveal" style="--d:.19s">
+            <div class="av" aria-hidden="true">TB</div>
+            <h3>Tivon Brentführer</h3>
+            <div class="role">Mentor</div>
+            <p>Begleitet neue Berater im Außendienst und steht für Einsatz, Disziplin und Qualität.</p>
+          </div>
+          <div class="member reveal" style="--d:.26s">
+            <div class="av" aria-hidden="true">AC</div>
+            <h3>Alessandro Corona</h3>
+            <div class="role">Teamleiter &amp; CEO</div>
+            <p>Steht für ehrliche Beratung, Disziplin und ein Team, das Maßstäbe in NRW setzt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Galerie ===== -->
+  <section class="gallery-sec">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Highlights</span>
+        <h2>Ein Team, das Maßstäbe setzt</h2>
+        <p>Einige Eindrücke aus unserem Alltag, von Auszeichnungen und gemeinsamen Erfolgen.</p>
+      </div>
+      <div class="gallery reveal">
+        <figure style="aspect-ratio: 768 / 1024;"><img src="https://alessandrocorona.de/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-10-at-17.31.23-768x1024.jpeg" alt="Team-Highlight" loading="lazy" decoding="async" /></figure>
+        <figure style="aspect-ratio: 1024 / 768;"><img src="https://alessandrocorona.de/wp-content/uploads/2026/01/Pokale-1024x768.jpeg" alt="Pokale und Auszeichnungen" loading="lazy" decoding="async" /></figure>
+        <figure style="aspect-ratio: 1024 / 1001;"><img src="https://alessandrocorona.de/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-10-at-16.49.04-e1768060591835-1024x1001.jpeg" alt="Team-Moment" loading="lazy" decoding="async" /></figure>
+        <figure style="aspect-ratio: 1024 / 683;"><img src="https://alessandrocorona.de/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-02-at-15.40.37-1024x683.jpeg" alt="Gemeinsamer Erfolg" loading="lazy" decoding="async" /></figure>
+        <figure style="aspect-ratio: 683 / 1024;"><img src="https://alessandrocorona.de/wp-content/uploads/2026/01/award_1280x1920_home-683x1024.jpg" alt="Auszeichnung" loading="lazy" decoding="async" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Kontakt ===== -->
+  <section id="kontakt" class="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Kontakt</span>
+        <h2>Beratung anfragen oder im Team durchstarten</h2>
+        <p>Egal ob Sie sich beraten lassen oder bei uns bewerben möchten – füllen Sie das Formular aus, ich melde mich umgehend persönlich bei Ihnen.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="form-card reveal">
+          <form id="contactForm" novalidate>
+            <div class="hp" aria-hidden="true">
+              <label for="website">Lass dieses Feld leer</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="field">
+              <label for="anliegen">Ich interessiere mich für</label>
+              <select id="anliegen" name="anliegen">
+                <option value="Mitarbeit im Team (Bewerbung)">Mitarbeit im Team (Bewerbung)</option>
+                <option value="Kostenlose Beratung (Kunde)">Kostenlose Beratung (Kunde)</option>
+                <option value="Sonstiges Anliegen">Sonstiges Anliegen</option>
+              </select>
+            </div>
+            <div class="field row">
+              <div><label for="vorname">Vorname</label><input type="text" id="vorname" name="vorname" required /></div>
+              <div><label for="nachname">Nachname</label><input type="text" id="nachname" name="nachname" required /></div>
+            </div>
+            <div class="field"><label for="email">E-Mail-Adresse <span class="opt">(optional)</span></label><input type="email" id="email" name="email" /></div>
+            <div class="field"><label for="telefon">Rufnummer <span class="opt">(optional)</span></label><input type="tel" id="telefon" name="telefon" /></div>
+            <div class="field"><label for="ort">Gewünschter Einsatzort <span class="opt">(optional)</span></label><input type="text" id="ort" name="ort" placeholder="z. B. Melle, Osnabrück …" /></div>
+            <div class="field"><label for="nachricht">Ihre Nachricht <span class="opt">(optional)</span></label><textarea id="nachricht" name="nachricht" placeholder="Worum geht es genau?"></textarea></div>
+            <div class="consent">
+              <input type="checkbox" id="consent" name="consent" required />
+              <label for="consent">Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden.</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Anfrage senden
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>
+            </button>
+            <p class="form-note">Beim Absenden öffnet sich Ihr E-Mail-Programm mit der fertigen Nachricht an info@alessandrocorona.de.</p>
+          </form>
+        </div>
+        <div class="contact-info reveal" style="--d:.1s">
+          <a class="info-card" href="tel:+4915120105783">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span><span class="lbl">Telefon</span><span class="val">+49 151 201 057 83</span></span>
+          </a>
+          <a class="info-card" href="mailto:info@alessandrocorona.de">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span>
+            <span><span class="lbl">E-Mail</span><span class="val">info@alessandrocorona.de</span></span>
+          </a>
+          <div class="social-row">
+            <a href="https://www.tiktok.com/@alessandrocorona5" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.05-2.82h-3.2v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12V9.66a5.79 5.79 0 0 0-.78-.05A5.81 5.81 0 1 0 15.4 15.4V9.01a7.45 7.45 0 0 0 4.35 1.39V7.2a4.28 4.28 0 0 1-3.15-1.38z"/></svg></a>
+            <a href="https://www.instagram.com/alessandro.corona.90" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+            <a href="https://youtube.com/@coronamelle" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.4-.4-5a2.6 2.6 0 0 0-1.8-1.8C19 4.8 12 4.8 12 4.8s-7 0-8.8.4A2.6 2.6 0 0 0 1.4 7C1 8.6 1 12 1 12s0 3.4.4 5a2.6 2.6 0 0 0 1.8 1.8c1.8.4 8.8.4 8.8.4s7 0 8.8-.4A2.6 2.6 0 0 0 22.6 17c.4-1.6.4-5 .4-5zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+            <a href="https://de.linkedin.com/in/alessandro-corona-29b828227" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.34 17.34V10.4H6.06v6.94zM7.2 9.4a1.32 1.32 0 1 0 0-2.64 1.32 1.32 0 0 0 0 2.64zm10.14 7.94v-3.8c0-2.03-1.08-2.98-2.53-2.98a2.18 2.18 0 0 0-1.98 1.09v-.94h-2.28v6.63h2.28v-3.5c0-.93.18-1.83 1.33-1.83 1.14 0 1.15 1.06 1.15 1.89v3.44z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">Alessandro Corona</div>
+        <p>Persönliche, TÜV-geprüfte Beratung rund um Internet, TV und Mobilfunk – und Ihre Chance auf eine Karriere im ausgezeichneten NRW-Team.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <a href="#top">Startseite</a>
+        <a href="#erfolge">Erfolge</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#karriere">Karriere</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <a href="tel:+4915120105783">+49 151 201 057 83</a>
+        <a href="mailto:info@alessandrocorona.de">info@alessandrocorona.de</a>
+        <a href="https://www.instagram.com/alessandro.corona.90" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@alessandrocorona5" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Alessandro Corona · Alle Rechte vorbehalten</span>
+      <span class="legal">
+        <a href="https://alessandrocorona.de/impressum/">Impressum</a>
+        <a href="https://alessandrocorona.de/datenschutz/">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Nach oben scrollen">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); });
+  });
+
+  // Reveal on scroll
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  // Count-up stats
+  function countUp(el) {
+    var to = parseInt(el.getAttribute('data-to'), 10);
+    if (reduce) { el.textContent = to; return; }
+    var start = performance.now(), dur = 1100;
+    (function step(now) {
+      var k = Math.min((now - start) / dur, 1);
+      var e2 = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(to * e2);
+      if (k < 1) requestAnimationFrame(step);
+    })(start);
+  }
+  var ioCount = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { countUp(e.target); ioCount.unobserve(e.target); } });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach(function (el) { ioCount.observe(el); });
+
+  // Single rAF loop: progress, header shadow, parallax, back-to-top
+  var progress = document.getElementById('progress');
+  var header = document.getElementById('header');
+  var toTop = document.getElementById('toTop');
+  var blob = document.getElementById('heroBlob');
+  var allowParallax = !reduce && window.matchMedia('(pointer:fine)').matches && window.innerWidth > 980;
+  var ticking = false;
+  function onFrame() {
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.transform = 'scaleX(' + (h > 0 ? (y / h).toFixed(4) : 0) + ')';
+    if (y > 46) header.classList.add('scrolled'); else if (y < 18) header.classList.remove('scrolled');
+    if (y > 600) toTop.classList.add('show'); else toTop.classList.remove('show');
+    if (allowParallax && blob && y < window.innerHeight * 1.4) { blob.style.transform = 'translate3d(0,' + (y * 0.18).toFixed(1) + 'px,0)'; }
+    ticking = false;
+  }
+  function requestFrame() { if (!ticking) { ticking = true; requestAnimationFrame(onFrame); } }
+  window.addEventListener('scroll', requestFrame, { passive: true });
+  window.addEventListener('resize', requestFrame, { passive: true });
+  onFrame();
+  toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+
+  // Ersparnis-Rechner
+  var slider = document.getElementById('costSlider');
+  var sliderVal = document.getElementById('sliderVal');
+  var costYearEl = document.getElementById('costYear');
+  var costMonthEl = document.getElementById('costMonth');
+  var saveYearEl = document.getElementById('saveYear');
+  var saveMonthEl = document.getElementById('saveMonth');
+  var SAVE_RATE = 0.18;
+  var eur = function (n) { return Math.round(n).toLocaleString('de-DE'); };
+  var animRAF = null;
+  function targets() { var m = parseInt(slider.value, 10); return { monthly: m, costYear: m * 12, saveMonth: m * SAVE_RATE, saveYear: m * 12 * SAVE_RATE }; }
+  function render(t) {
+    sliderVal.textContent = t.monthly + ' €';
+    var min = parseInt(slider.min, 10), max = parseInt(slider.max, 10);
+    var pct = ((t.monthly - min) / (max - min)) * 100;
+    slider.style.background = 'linear-gradient(90deg, var(--primary) 0%, var(--teal) ' + pct + '%, var(--surface-soft) ' + pct + '%)';
+    costMonthEl.textContent = eur(t.monthly) + ' €';
+    costYearEl.textContent = eur(t.costYear) + ' €';
+    saveMonthEl.textContent = eur(t.saveMonth) + ' €';
+    saveYearEl.textContent = eur(t.saveYear);
+  }
+  slider.addEventListener('input', function () { if (animRAF) { cancelAnimationFrame(animRAF); animRAF = null; } render(targets()); });
+  var panel = document.querySelector('.calc-panel');
+  var counted = false;
+  var io2 = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && !counted) {
+        counted = true; var t = targets();
+        if (reduce) { render(t); io2.disconnect(); return; }
+        var start = performance.now(), dur = 900;
+        (function step(now) {
+          var k = Math.min((now - start) / dur, 1); var e2 = 1 - Math.pow(1 - k, 3);
+          render({ monthly: t.monthly, costYear: t.costYear * e2, saveMonth: t.saveMonth * e2, saveYear: t.saveYear * e2 });
+          if (k < 1) animRAF = requestAnimationFrame(step);
+        })(start);
+        io2.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  io2.observe(panel);
+  render(targets());
+
+  // Contact form -> mail client (subject depends on selection)
+  var form = document.getElementById('contactForm');
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (form.website.value) return;
+    if (!form.vorname.value.trim() || !form.nachname.value.trim()) { alert('Bitte geben Sie Vor- und Nachnamen an.'); return; }
+    if (!form.consent.checked) { alert('Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.'); return; }
+    var name = form.vorname.value.trim() + ' ' + form.nachname.value.trim();
+    var anliegen = form.anliegen.value;
+    var lines = [
+      'Anliegen: ' + anliegen,
+      'Name: ' + name,
+      form.email.value.trim() ? 'E-Mail: ' + form.email.value.trim() : '',
+      form.telefon.value.trim() ? 'Rufnummer: ' + form.telefon.value.trim() : '',
+      form.ort.value.trim() ? 'Gewünschter Einsatzort: ' + form.ort.value.trim() : '',
+      '', 'Nachricht:', form.nachricht.value.trim() || '(keine Angabe)'
+    ].filter(Boolean);
+    var subject = anliegen.indexOf('Bewerbung') > -1 ? 'Bewerbung von ' + name : 'Anfrage von ' + name;
+    window.location.href = 'mailto:info@alessandrocorona.de?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+  });
+})();
+</script>
+</body>
+</html>
